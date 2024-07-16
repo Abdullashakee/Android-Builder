@@ -1,11 +1,11 @@
 [
     {
         "kernelSource": {
-            "name": "Mi CC 9e",
-            "repo": "https://github.com/MiCode/Xiaomi_Kernel_OpenSource",
-            "branch": "laurus-q-oss",
-            "device": "laurus-q-oss",
-            "defconfig": "vendor/wayne_defconfig"
+            "name": "poco x3 pro",
+            "repo": "https://github.com/tejas101k/kernel_xiaomi_vayu/",
+            "branch": "fourteen",
+            "device": "fourteen",
+            "defconfig": "vendor/vayu_defconfig"
         },
         "toolchains": [
             {
