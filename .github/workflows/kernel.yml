@@ -292,6 +292,7 @@ jobs:
             git am -s < ${{ env.WORKSPACE }}/LXC/Patches/xt_qtaguid.patch
             echo "🎖️ Apply xt_qtaguid.patch"
           fi
+          #fixerrror
           - name: Build Kernel
              shell: bash
              env:
