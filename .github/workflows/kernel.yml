@@ -33,31 +33,30 @@ jobs:
   build-kernel:
     name: Build kernel
     runs-on: ubuntu-latest
-    needs: read-configuration
-    strategy:
-     matrix:
-      CONFIG: ${{ fromJSON(needs.Read-configuration.outputs.CONFIGS) }}
+    needs: read-configuration 
+  strategy:
+  - name: Debug CONFIGS
+    run: echo "${{ needs.Read-configuration.outputs.CONFIGS }}"
     env:
-      WORKSPACE: ${{ github.workspace }}
-      BUILD_DATE: ${{ needs.read-configuration.outputs.BUILD_DATE }}
-      KERNEL_NAME: ${{ matrix.CONFIG.kernelSource.name }}
-      KERNEL_REPO: ${{ matrix.CONFIG.kernelSource.repo }}
-      KERNEL_BRANCH: ${{ matrix.CONFIG.kernelSource.branch }}
-      KERNEL_DEVICE: ${{ matrix.CONFIG.kernelSource.device }}
-      KERNEL_DEFCONFIG_PATH: ${{ matrix.CONFIG.kernelSource.defconfig }}
-      ENABLE_CCACHE: ${{ matrix.CONFIG.enableCcache }}
-      USE_ANYKERNEL3: ${{ matrix.CONFIG.AnyKernel3.use }}
-      CONFIRM_RELEASE: ${{ matrix.CONFIG.AnyKernel3.release }}
-      ENABLE_KERNELSU: ${{ matrix.CONFIG.enableKernelSU }}
-      ENABLE_LXC: ${{ matrix.CONFIG.enableLXC }}
-      OUT_DIR: ${{ github.workspace }}/out
-      CCACHE_DIR: ${{ github.workspace }}/ccache
+     WORKSPACE: ${{ github.workspace }}
+     BUILD_DATE: ${{ needs.read-configuration.outputs.BUILD_DATE }}
+     KERNEL_NAME: ${{ matrix.CONFIG.kernelSource.name }}
+     KERNEL_REPO: ${{ matrix.CONFIG.kernelSource.repo }}
+     KERNEL_BRANCH: ${{ matrix.CONFIG.kernelSource.branch }}
+     KERNEL_DEVICE: ${{ matrix.CONFIG.kernelSource.device }}
+     KERNEL_DEFCONFIG_PATH: ${{ matrix.CONFIG.kernelSource.defconfig }}
+     ENABLE_CCACHE: ${{ matrix.CONFIG.enableCcache }}
+     USE_ANYKERNEL3: ${{ matrix.CONFIG.AnyKernel3.use }}       CONFIRM_RELEASE: ${{ matrix.CONFIG.AnyKernel3.release }}
+     ENABLE_KERNELSU: ${{ matrix.CONFIG.enableKernelSU }}
+     ENABLE_LXC: ${{ matrix.CONFIG.enableLXC }}
+     OUT_DIR: ${{ github.workspace }}/out
+     CCACHE_DIR: ${{ github.workspace }}/ccache
 
-    steps:
+      steps:
       - name: Set Swap to 10G
         uses: pierotofy/set-swap-space@master
         with:
-          swap-size-gb: 10
+         swap-size-gb: 10
 
       - name: Checkout Kernel Source
         uses: actions/checkout@v4
