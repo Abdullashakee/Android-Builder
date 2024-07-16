@@ -1,6 +1,6 @@
-name: Build kernels
+ name: Build kernels
 
-on:
+ on:
   push:
     paths:
       - ".github/workflows/kernel.yml"
@@ -8,7 +8,7 @@ on:
   schedule:
     - cron: "14 13 * * 5"
 
-jobs:
+ jobs:
   Read-configuration:
     name: 🐂 Parse *.config.json
     runs-on: ubuntu-latest
