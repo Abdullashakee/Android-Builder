@@ -44,7 +44,7 @@
       matrix:
         CONFIG: ${{ fromJSON(needs.Read-configuration.outputs.CONFIGS) }}
     env:
-      # Basic configuration
+   # Basic configuration
       WORKSPACE: ${{ github.workspace }}
       BUILD_DATE: "${{ needs.Read-configuration.outputs.BUILD_DATE }}"
 
