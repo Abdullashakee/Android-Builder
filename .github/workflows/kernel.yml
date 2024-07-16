@@ -300,6 +300,9 @@ jobs:
           ARGS: ${{ steps.generate-args.outputs.ARGS }}
         run: |
           echo "🤔 PATH Variable: $PATH"
+          echo "🤔 OUT_DIR: ${OUT_DIR}"
+          echo "🤔 CCACHE_DIR: ${CCACHE_DIR}"
+          echo "🤔 WORKSPACE: ${WORKSPACE}"
           export KBUILD_BUILD_HOST=Github-Action
           export KBUILD_BUILD_USER=$(echo ${{ github.actor }} | tr A-Z a-z)
           make ${{ env.ARGS }} ${{ env.KERNEL_DEFCONFIG_PATH }}
