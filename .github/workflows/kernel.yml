@@ -35,8 +35,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: read-configuration
     strategy:
-      matrix:
-        CONFIG: ${{ fromJSON(needs.read-configuration.outputs.CONFIGS) }}
+     matrix:
+      CONFIG: ${{ fromJSON(needs.Read-configuration.outputs.CONFIGS) }}
     env:
       WORKSPACE: ${{ github.workspace }}
       BUILD_DATE: ${{ needs.read-configuration.outputs.BUILD_DATE }}
