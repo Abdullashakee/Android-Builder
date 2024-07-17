@@ -1,7 +1,7 @@
 [
     {
         "kernelSource": {
-            "name": "poco x3 pro",
+            "name": "pocox3pro",
             "repo": "https://github.com/Abdullashakee/platform_kernel_xiaomi_vayu",
             "branch": "main",
             "device": "kernel_xiaomi_vayu",
