@@ -132,9 +132,10 @@ jobs:
           
       - name: 🏃 Change directory and run Makefile
         run: |
-           mv poco_x3_pro /home/runner/work/poco_x3_pro
-           cd /home/runner/work/poco_x3_pro
-           make
+          mv poco_x3_pro /home/runner/work/_temp/poco_x3_pro
+          cd /home/runner/work/_temp/poco_x3_pro
+          ls -la
+          make
            
       - name: 💫 Get toolchains
         env:
