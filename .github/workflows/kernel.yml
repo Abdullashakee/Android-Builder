@@ -129,13 +129,6 @@ jobs:
         run: |
           git clone --recursive --depth=1 -j $(nproc) --branch main https://github.com/Abdullashakee/platform_kernel_xiaomi_vayu "poco x3 pro"
           # tree ${{ env.KERNEL_NAME }}
-          
-      - name: 🏃 Move and Run Makefile
-        run: |
-          mv poco_x3_pro /home/runner/work/_temp/
-          cd /home/runner/work/_temp/poco_x3_pro
-          ls -la  # Optional: List directory contents for verification
-          make
            
       - name: 💫 Get toolchains
         env:
