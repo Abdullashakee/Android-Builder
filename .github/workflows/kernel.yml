@@ -134,10 +134,10 @@ jobs:
       - name: 🛠️ Set up Clang and ARM Toolchain
         run: |
           sudo apt-get update
-          sudo apt-get install -y clang-16 gcc-arm-linux-gnueabi gcc-arm-linux-gnueabihf
-          export PATH="/usr/lib/llvm-16/bin:$PATH"
+          sudo apt-get install -y clang-15 gcc-arm-linux-gnueabi gcc-arm-linux-gnueabihf
+          export PATH="/usr/lib/llvm-15/bin:$PATH"
           echo "Using Clang version:"
-          clang-16 --version
+          clang-15 --version
 
       - name: 🏃 Move and Run Makefile
         run: |
