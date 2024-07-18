@@ -1,10 +1,10 @@
 [
     {
         "kernelSource": {
-            "name": "pocox3pro",
+            "name": "kernel_xiaomi_vayu",
             "repo": "https://github.com/Abdullashakee/platform_kernel_xiaomi_vayu",
             "branch": "main",
-            "device": "kernel_xiaomi_vayu",
+            "device": "vayu",
             "defconfig": "vendor/vayu_defconfig"
         },
         "toolchains": [
