@@ -5,7 +5,7 @@
             "repo": "https://github.com/Abdullashakee/platform_kernel_xiaomi_vayu",
             "branch": "main",
             "device": "vayu",
-            "defconfig": "vendor/vayu_defconfig"
+            "defconfig": "vayu_user_defconfig"
         },
         "toolchains": [
             {
