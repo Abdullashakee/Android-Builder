@@ -130,7 +130,26 @@ jobs:
         run: |
           git clone --recursive --depth=1 -j $(nproc) --branch main https://github.com/Abdullashakee/platform_kernel_xiaomi_vayu "kernel_xiaomi_vayu"
           # tree ${{ env.KERNEL_NAME }}
+      
+      - name: 🛠️ Set up Clang and ARM Toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang-16 gcc-arm-linux-gnueabi gcc-arm-linux-gnueabihf
+          export PATH="/usr/lib/llvm-16/bin:$PATH"
+          echo "Using Clang version:"
+          clang-16 --version
 
+      - name: 🏃 Move and Run Makefile
+        run: |
+          mv pocox3pro /home/runner/work/_temp/
+          cd /home/runner/work/_temp/pocox3pro
+          ls -la
+
+          # Modify the CPU flag in the kernel config file
+          sed -i 's/-mcpu=cortex-a76+crc+crypto/-mcpu=cortex-a76/' .config
+
+          make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- CC=clang-16
+          
       - name: 💫 Get toolchains
         env:
           toolchains: "${{ toJSON(matrix.CONFIG.toolchains) }}"
