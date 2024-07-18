@@ -130,6 +130,14 @@ jobs:
         run: |
           git clone --recursive --depth=1 -j $(nproc) --branch main https://github.com/Abdullashakee/platform_kernel_xiaomi_vayu "kernel_xiaomi_vayu"
           # tree ${{ env.KERNEL_NAME }}
+          
+           name: 🛠️ Set up Clang and ARM Toolchain
+           run: |
+           sudo apt-get update
+           sudo apt-get install -y clang-14 gcc-arm-linux-gnueabi gcc-arm-linux-gnueabihf
+           export PATH="/usr/lib/llvm-14/bin:$PATH"
+           echo "Using Clang version:"
+           clang-14 --version
 
       - name: 💫 Get toolchains
         env:
