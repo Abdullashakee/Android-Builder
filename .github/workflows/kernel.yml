@@ -141,12 +141,12 @@ jobs:
 
       - name: 🏃 Move and Run Makefile
         run: |
-          mv kernel_xiaomi_vayu /home/runner/work/_temp/
-          cd /home/runner/work/_temp/kernel_xiaomi_vayu
+          mv pocox3pro /home/runner/work/_temp/
+          cd /home/runner/work/_temp/pocox3pro
           ls -la
 
-          # Generate the .config file
-          make ARCH=arm64 vendor/vayu_defconfig
+          # Generate the .config file using the correct defconfig path
+          make ARCH=arm64 vayu_user_defconfig
 
           # Modify the CPU flag in the kernel config file
           sed -i 's/-mcpu=cortex-a76+crc+crypto/-mcpu=cortex-a76/' .config
