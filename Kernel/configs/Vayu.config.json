@@ -9,9 +9,9 @@
         },
         "toolchains": [
             {
-                "repo": "https://github.com/kdrag0n/proton-clang",
+                "repo": "https://gitlab.com/jjpprrrr/prelude-clang",
                 "branch": "master",
-                "name": "protonclang",
+                "name": "preludeclang",
                 "binaryEnv": [
                     "bin"
                 ]
