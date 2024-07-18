@@ -141,7 +141,7 @@ jobs:
 
       - name: 🏃 Move and Run Makefile
         run: |
-          mv pocox3pro /home/runner/work/_temp/
+          mv kernel_xiaomi_vayu /home/runner/work/_temp/
           cd /home/runner/work/_temp/pocox3pro
           ls -la
 
